@@ -1,23 +1,83 @@
 aid: insignia-financial
+
 name: Insignia Financial
-description: 'Insignia Financial is a company surfaced via the API Evangelist harvest backlog (source:
-  australia-apidays-2026) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Insignia Financial Ltd (ASX: IFL), formerly IOOF Holdings (renamed December 2021), is an Australian wealth management
+  group headquartered in Docklands, Melbourne, with roots dating to 1846. It runs a multibranded, vertically integrated model
+  spanning financial advice, superannuation and investment platforms (master trust and wrap), and asset management, under
+  brands including MLC and IOOF. No public developer API, developer portal or API documentation was found; its website (insigniafinancial.com.au)
+  sits behind an Akamai edge that refuses automated clients.'
+
 url: https://raw.githubusercontent.com/api-evangelist/insignia-financial/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Financial Services
+- Wealth Management
+- Superannuation
+- Asset Management
+- Financial Advice
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/insignia-financial-hosts.yml
+- type: IntegrationEdges
+  url: integrations/insignia-financial-integration-edges.yml
+- type: Vendors
+  url: vendors/insignia-financial-vendors.yml
+- type: DomainSecurity
+  url: security/insignia-financial-domain-security.yml
 - type: Website
   url: https://insigniafinancial.com.au/
+- type: PrivacyPolicy
+  url: https://insigniafinancial.com.au/privacy
+- type: Support
+  url: https://www.insigniafinancial.com.au/contact-us
+- type: LinkedIn
+  url: https://www.linkedin.com/company/insignia-financial
+
+apis: []
+
+x-coverage:
+  state: covered
+  reason: identity-established-site-edge-blocks-crawlers
+  detail: Akamai returns 403 Access Denied to plain, browser-UA and headless-browser fetches of www.insigniafinancial.com.au;
+    apex answers 307 to www. Pages were confirmed via search index (privacy, contact-us). Identity corroborated by Morningstar/Stockopedia
+    ASX:IFL profiles. No API, developer portal or GitHub org (github.com/insignia-financial 404) found.
+  evidence:
+  - url: https://insigniafinancial.com.au/
+    status: 307
+  - url: https://www.insigniafinancial.com.au/
+    status: 403
+  - url: https://www.insigniafinancial.com.au/robots.txt
+    status: 403
+  - url: https://github.com/insignia-financial
+    status: 404
+  - url: https://www.linkedin.com/company/insignia-financial
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

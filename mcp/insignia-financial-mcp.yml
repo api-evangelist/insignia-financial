@@ -1,0 +1,25 @@
+name: Insignia Financial MCP Server
+type: MCPServer
+provider: insignia-financial
+generated: '2026-10-21'
+method: none
+status: none
+description: >-
+  No official hosted or local MCP server from Insignia Financial was found, and no candidate tool list
+  could be derived because the provider publishes no OpenAPI or other API contract (pre-flight contract
+  discovery on insigniafinancial.com.au and api.com.au: openapi/asyncapi/graphql/mcp all absent; GitHub org
+  InsigniaFinancial lists 0 public repos).
+source:
+- https://insigniafinancial.com.au/
+- https://github.com/InsigniaFinancial
+evidence:
+- url: https://insigniafinancial.com.au/llms.txt
+  status: 403
+  note: Akamai "Access Denied" to automated client
+- query: '"Insignia Financial" MCP server OR "developer API" OR "llms.txt"'
+  result: no results relating to Insignia Financial
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+tools: []

@@ -1,0 +1,32 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://myexpand.com.au/_doc/Expand_functionality_data_feeds
+- https://zapier.com/apps/insignia-financial/integrations
+- https://n8n.io/integrations/insignia-financial/
+- https://composio.dev/toolkits/insignia-financial
+- https://monid.ai/tools/insignia-financial
+checked:
+- https://myexpand.com.au/_doc/Expand_functionality_data_feeds
+- https://zapier.com/apps/insignia-financial/integrations
+- https://api.github.com/orgs/InsigniaFinancial/repos
+- https://composio.dev/toolkits/insignia-financial
+- https://monid.ai/tools/insignia-financial
+- https://n8n.io/integrations/insignia-financial/
+summary: Insignia Financial publishes no developer API. The only integration it names in material it publishes is
+  a third-party data feed from its MLC Expand wrap platform to Class (SMSF administration software), described in
+  the adviser guide "Setting up and managing data feeds" (October 2026, HTTP 200, application/pdf). That guide also
+  mentions adviser data feeds to an unnamed "advice software provider". Those providers are not named, so they are
+  not recorded as edges.
+marketplace_apps: []
+edges:
+- partner_name: Class
+  partner: null
+  type: claimed
+  direction: unknown
+  category: SMSF administration / accounting software
+  use_case: Third party data feeds (Class only) — Expand account data made available to Class once enabled under
+    Data Feed settings.
+  partner_url: https://www.class.com.au/
+  evidence: https://myexpand.com.au/_doc/Expand_functionality_data_feeds
+templates: []
